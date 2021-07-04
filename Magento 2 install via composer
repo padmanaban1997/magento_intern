@@ -1,0 +1,34 @@
+<--Magento 2 install via composer-->
+
+https://mirasvit.com/knowledge-base/how-to-install-magento-2-via-composer.html
+
+
+check php version magento version then start
+
+1)
+
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4 . --prefer-dist --ignore-platform-reqs --no-interaction --dev
+
+
+2)
+
+bin/magento setup:install \
+--base-url=http://localhost/fossil \
+--db-host=localhost \
+--db-name=fossil \
+--db-user=root \
+--db-password=root123 \
+--admin-firstname=pankaj \
+--admin-lastname=kalal \
+--admin-email=pankaj@admin.com \
+--admin-user=admin \
+--admin-password=admin@123 \
+--language=en_US \
+--currency=USD \
+--timezone=America/Chicago \
+--use-rewrites=1
+
+3) 
+
+bin/magento module:disable Magento_TwoFactorAuth
+bin/magento cache:flush 
