@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Navigate_Cooking::list" title="Cooking list" module="Navigate_Cooking" sortOrder="10" resource="Navigate_Cooking::list"/>
+    	<add id="Navigate_Cooking::add_row" title="Cooking List" module="Navigate_Cooking" sortOrder="20" parent="Navigate_Cooking::list" action="grid/grid" resource="Navigate_Cooking::add_row"/>
+    </menu>
+</config>

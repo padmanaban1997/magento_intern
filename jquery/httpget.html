@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    
+        $("button").click(function(){
+            var name=$("#name").val();
+            var address=$("#address").val();
+            alert(name);
+            alert(address);
+
+            $.get("demo_test.php",
+            
+            {
+                name1:name,
+                address1:address
+            },function(data){
+                    alert(data);
+            });
+
+        });
+
+    });
+
+</script>
+</head>
+<body>
+
+    <form>
+        <input type="text" id="name"><br>
+        <input type="text" id="address">
+  
+
+
+<button>Send an HTTP GET request to a page and get the result back</button>
+
+</form>
+
+</body>
+</html>

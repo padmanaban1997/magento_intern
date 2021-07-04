@@ -1,0 +1,38 @@
+.bg{
+     background-image: url('2.jpg');
+     background-repeat: no-repeat;
+     background-size:100%; 
+     background-attachment: fixed;
+     margin: 10%
+
+   }
+
+.white-text{
+			color: white;
+
+			}  
+
+.error-text{
+			 color: gold;	
+           }	
+
+
+input[type=submit]{
+    background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 3px 2px;
+  cursor: pointer;
+}    
+
+input[type=reset]{
+    background-color: red;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-decoration: none;
+  margin: 3px 2px;
+  cursor: pointer;
+}           		        		 

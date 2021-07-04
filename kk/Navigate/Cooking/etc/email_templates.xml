@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+<template id="cooking_course_email_template" label="cooking course Form" file="cooking_course_template.html" type="html" module="Navigate_Cooking" area="frontend"/>
+<template id="send_email_email_template" label="Email Form" file="email_template.html" type="text" module="Navigate_Cooking" area="frontend"/>
+</config>

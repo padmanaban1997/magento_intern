@@ -1,0 +1,527 @@
+<!Doctype html>
+
+
+<html>
+
+<head>
+		<style type="text/css">
+
+					table 	{
+ 									 border-style: solid;
+ 									 border-color:white;
+ 									 border-spacing: 15px;
+ 									 padding-left: 50px;
+ 									 padding-right: 50px;
+ 									 padding-top: 25px;
+ 									 padding-bottom: 25px;
+							}
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="bg">
+	<form action="" name="forms" method="post">
+
+	<center>
+	<table >
+
+		<tr>
+			<td colspan="2" class="white-text" style="text-align: center;font-size:20px;">Form Validation</td>
+		</tr>
+
+		<tr>
+			<td class="white-text"> 
+				<label for="name"> Name:</label>
+			</td>
+			<td>
+				<input type="text" id="name" name="name" placeholder="Enter Your Name " autocomplete="off">
+				<br><span id="username" class="error-text"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="white-text" >
+				<label for="email">Email:</label>
+			</td>
+			<td>
+				<input type="email" name="semail" id="semail" placeholder="Enter Your Email" autocomplete="off">
+				<br><span id="uemail" class="error-text"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="white-text" >
+				<label for="Detail">Detail:</label>
+			</td>
+			<td>
+				<textarea name="message" rows="10" 	cols="30" id="detail" placeholder="Detail..." autocomplete="off"></textarea><br>
+				<span id="udetail" class="error-text"></span>
+										
+			</td>
+		</tr>
+		<tr>
+			<td class="white-text" >
+				<label for="pwd">Password:</label><br>
+
+			</td>
+			<td> 
+				<input type="password" placeholder="Enter Your Password" id="pwd" name="pwd">
+				<br><span class="error-text" id="upwd"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="white-text" >
+				<label for="cpwd"> Confirm Password:</label><br>
+			</td>
+			 <td> 
+			 	<input type="password" placeholder="Confirm Password" id="cpwd" name="cpwd"><br>
+			 	<span class="error-text" id="ucpwd"></span>
+			 </td>
+
+		</tr>
+
+		<tr>
+			<td class="white-text" > 
+				<label for="age">Age:</label>
+			</td>
+			<td> 
+				<input type="text" placeholder="age" id="age" name="age" min="1" max="100"><br>
+				<span class="error-text" id="uage"></span>
+			</td>
+
+		</tr>
+
+		<tr>
+			<td class="white-text" >
+				<label for="Birth Date:">Birth Date:</label>
+			</td>
+
+			<td>
+				<input type="date" name="date" id="date">
+				<span class="error-text" id="datevalid"></span>
+			</td>
+
+		</tr>
+		
+
+
+		<tr>
+			<td class="white-text" >
+				<label for="gender">Gender:</label>
+			</td>
+
+			<td class="white-text" > 
+			
+				<input type="radio" id="gender" name="gender" value="male">
+				<label for="male">Male</label>
+				<input type="radio" id="gender" name="gender" value="female">
+				<label for="female">Female</label><br>
+				<span id="ugender" class="error-text"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="white-text" >
+				<label for="state">Choose a state:</label>
+			</td>
+			<td >
+				<select id="state" name="state">
+					<option value="">select a state</option>
+					<option value="gujarat">Gujarat</option>
+					<option value="chennai">chennai</option>
+				</select><br>
+				<span id="userstate" class="error-text"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" class="white-text" >
+				<input type="checkbox" id="checkb" name="checkb" value="check">
+			 	<label for="condition"> I accept all terms and conditions</label><br>
+			 	<span id="usercheck" class="error-text"></span>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2" style="text-align: center">
+				<input type="submit" id="submitbtn"  value="submit">&nbsp; &nbsp;&nbsp;<input type="reset" value="cancel">
+			</td>
+		</tr>
+
+	</table>	
+	</center>
+	</form>
+	<script>
+		$(document).ready(function(){
+
+			
+			$('#username').hide();
+			$('#uemail').hide();
+			$('#udetail').hide();
+			$('#upwd').hide();
+			$('#ucpwd').hide();
+			$('#uage').hide();
+			$('#datevalid').hide();
+			
+			$('#name').keyup(function(){
+				name_check();
+
+			});
+
+			function name_check(){
+
+				var user_val= $('#name').val();
+				
+				if(user_val.length == ''){
+					$('#username').show();
+					$('#username').html("please fill the name");
+					$('#username').focus();
+					$('#username').css("color","red");
+
+				}
+				else if(!isNaN(user_val))
+
+					{
+					$('#username').show();
+					$('#username').html("only characters are  allowed");
+					$('#username').focus();
+					$('#username').css("color","red");
+
+					}
+			
+				
+				else if((user_val.length<=2 )||(user_val.length>10 )){
+					$('#username').show();
+					$('#username').html("username length must be  between(2 to 10 chars)");
+					$('#username').focus();
+					$('#username').css("color","red");
+
+				}
+				
+				else
+				{
+					$('#username').hide();
+
+				}
+				
+			}
+
+			$('#semail').keyup(function(){
+				email_check();
+
+			});
+
+			function email_check(){
+				
+				var email_val= $('#semail').val();
+				
+				if(email_val.length == ''){
+					$('#uemail').show();
+					$('#uemail').html("Please fill the Email field");
+					$('#uemail').focus();
+					$('#uemail').css("color","red");
+
+				}
+				else
+				{
+
+					$('#uemail').hide();
+				}
+			}
+
+			$('#detail').keyup(function(){
+				detail_check();
+
+			});
+
+			function detail_check(){
+				
+				var detail_val= $('#detail').val();
+				
+				if(detail_val.length == ''){
+					$('#udetail').show();
+					$('#udetail').html("Please fill the detail field");
+					$('#udetail').focus();
+					$('#udetail').css("color","red");
+
+				
+				}
+				else
+				{
+
+					$('#udetail').hide();
+				}
+			}
+			
+			$('#pwd').keyup(function(){
+				password_check();
+
+			});
+
+			function password_check(){
+
+				var pass_val= $('#pwd').val();
+				
+				if(pass_val.length == ''){
+					$('#upwd').show();
+					$('#upwd').html("please fill the password");
+					$('#upwd').focus();
+					$('#upwd').css("color","red");
+
+				}
+			
+				else if((pass_val.length<=2 )||(pass_val.length>10 )){
+					$('#upwd').show();
+					$('#upwd').html("password length must be  between(2 to 10 chars)");
+					$('#upwd').focus();
+					$('#upwd').css("color","red");
+
+				}
+				
+				else
+				{
+					$('#upwd').hide();
+
+				}
+				
+			}
+
+
+			$('#cpwd').keyup(function(){
+				confirmpassword_check();
+
+			});
+
+			function confirmpassword_check(){
+
+				var cpass_val= $('#cpwd').val();
+				var pass_val= $('#pwd').val();
+				
+				if(cpass_val.length == ''){
+					$('#ucpwd').show();
+					$('#ucpwd').html("please fill the confirm password");
+					$('#ucpwd').focus();
+					$('#ucpwd').css("color","red");
+
+				}
+			
+				else if((cpass_val.length<=2 )||(cpass_val.length>10 )){
+					$('#ucpwd').show();
+					$('#ucpwd').html(" confrim password length must be  between(2 to 10 chars)");
+					$('#ucpwd').focus();
+					$('#ucpwd').css("color","red");
+
+				}
+
+				
+				else if(pass_val!=cpass_val){
+					$('#ucpwd').show();
+					$('#ucpwd').html(" password are not same !");
+					$('#ucpwd').focus();
+					$('#ucpwd').css("color","red");
+
+				}
+				
+				else
+				{
+					$('#ucpwd').hide();
+
+				}
+				
+			}
+
+
+			
+			$('#age').keyup(function(){
+				age_check();
+
+			});
+
+			function age_check(){
+
+				var age_val= $('#age').val();
+				
+				if(age_val.length == ''){
+					$('#uage').show();
+					$('#uage').html("please fill the age");
+					$('#uage').focus();
+					$('#uage').css("color","red");
+
+				}
+				else if(isNaN(age_val))
+
+					{
+					$('#uage').show();
+					$('#uage').html("only numbers are  allowed");
+					$('#uage').focus();
+					$('#uage').css("color","red");
+
+					}
+				else if((age_val<=1) ||(age_val>100) )
+
+					{
+					$('#uage').show();
+					$('#uage').html("age between 1 to 100");
+					$('#uage').focus();
+					$('#uage').css("color","red");
+
+					}
+			
+			
+				else
+				{
+					$('#uage').hide();
+
+				}
+				
+			}
+
+			$('#date').keyup(function(){
+				date_check();
+
+			});
+
+			function date_check(){
+				
+				var date_val= $('#date').val();
+				
+				if(date_val.length == ''){
+					$('#datevalid').show();
+					$('#datevalid').html("Please fill the date field");
+					$('#datevalid').focus();
+					$('#datevalid').css("color","red");
+
+				
+				}
+				else
+				{
+
+					$('#datevalid').hide();
+				}
+			}
+
+
+
+
+
+		$("#submitbtn").click(function(){
+
+			name_check();
+			email_check();
+			detail_check();
+			password_check();
+			confirmpassword_check();
+			age_check();
+			date_check();
+			
+			if($("#name").val() == '')
+
+			{
+				$('#username').html("please fill the name");
+				$('#username').focus();
+				$('#username').css("color","red");
+				return false;
+			}
+		
+	
+			if($("#semail").val() == '')
+			{
+		
+				$('#uemail').html("Please fill the Email field");
+				$('#uemail').focus();
+				$('#uemail').css("color","red");
+				return false;
+		
+			}
+		
+			if($("#detail").val() == '')
+			{
+				$('#udetail').html("Please fill the detail field");
+				$('#udetail').focus();
+				$('#udetail').css("color","red");
+				return false;	
+			}
+			if($("#pwd").val() == '')
+			{
+				$('#upwd').html("Please fill the password field");
+				$('#upwd').focus();
+				$('#upwd').css("color","red");
+				return false;	
+			}
+			if($("#cpwd").val() == '')
+			{
+				$('#ucpwd').html("Please fill the confirm password field");
+				$('#ucpwd').focus();
+				$('#ucpwd').css("color","red");
+				return false;	
+			}
+			if($("#age").val() == '')
+			{
+				$('#uage').html("Please fill the age field");
+				$('#uage').focus();
+				$('#uage').css("color","red");
+				return false;	
+			}
+			if($("#date").val() == '')
+			{
+				$('#datevalid').html("Please fill the date field");
+				$('#datevalid').focus();
+				$('#datevalid').css("color","red");
+				return false;	
+			}
+		
+		
+			if ($('#gender:checked').length == 0){
+				$('#ugender').html("Please fill gender field");
+				$('#ugender').focus();
+  			  	$('#ugender').css("color","red");
+				return false;
+			}
+			else
+			{
+
+				$('#ugender').hide();
+			}
+		
+			var cstate = $("#state");
+			if (cstate.val() == '')
+			 {
+
+   			 	$('#userstate').html("Please fill the state field");
+   			 	$('#userstate').focus();
+  			  	$('#userstate').css("color","red");
+   				return false;
+			 }
+			else
+			{
+
+				$('#userstate').hide();
+			}
+
+		
+			if ($('#checkb:checked').length == 0)
+			{
+				$('#usercheck').html("Please select cheeckbox field");
+				$('#usercheck').focus();
+  			  	$('#usercheck').css("color","red");
+				return false;
+			
+			}
+			else
+				{
+
+					$('#usercheck').hide();
+				}
+		});
+
+});
+
+
+	</script>
+
+</body>
+
+</html>

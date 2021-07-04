@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#btn1").click(function(){
+        $("#setdata p").text("This is paragraph");
+        $("#setdata h2").html("hello <b>world</b>");
+
+
+        });    
+        });
+    </script>
+</head>
+<body>
+
+    <div id="setdata">
+
+        <p>this is a <b>paragraph</b></p>
+
+        <h2>hello world</h2>
+
+
+
+    </div>
+    <button id="btn1">set data</button>
+</body>
+</html>

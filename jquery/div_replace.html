@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle(5000);
+  });
+  $("#hide").click(function(){
+    $("#div1").hide();
+  });
+  $("#show").click(function(){
+    $("#div1").show();
+    $("#div1").css("color","blue");
+  });
+  $("#stop").click(function(){
+    $("#panel").stop();
+  });
+});
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: grey;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+</head>
+<body>
+    <button id="stop">Stop sliding</button>
+ 
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">Hello world!</div>
+<hr>
+
+<div id="div1">If you click on the "Hide" div, I will disappear.</div>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</body>
+</html>
