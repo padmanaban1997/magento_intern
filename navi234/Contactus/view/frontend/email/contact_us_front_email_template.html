@@ -1,0 +1,44 @@
+<!--@subject {{trans "Contact Us "}}  @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><strong>{{trans "First Name"}}</strong></td>
+        <td>{{var first_name}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Last Name"}}</strong></td>
+        <td>{{var last_name}}</td>
+    </tr>
+      <tr>
+        <td><strong>{{trans "Email"}}</strong></td>
+        <td>{{var email}}</td>
+    </tr>
+
+    <tr>
+        <td><strong>{{trans "Phone Number"}}</strong></td>
+        <td>{{var telephone}}</td>
+    </tr>
+
+    <tr>
+        <td><strong>{{trans "Company"}}</strong></td>
+        <td>{{var company}}</td>
+    </tr>
+
+
+
+    <tr>    
+        <td><strong>{{trans "Website"}}</strong></td>
+        <td>{{var website}}</td>
+    </tr>
+
+
+    <tr>
+        <td><strong>{{trans "Description"}}</strong></td>
+        <td>{{var description}}</td>
+    </tr>
+</table>
+
+
+{{template config_path="design/email/footer_template"}}

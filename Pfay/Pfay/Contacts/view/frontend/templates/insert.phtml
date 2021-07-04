@@ -1,0 +1,69 @@
+<?php  $record = $block->getEditRecord();
+
+
+?>
+<html>
+<head><title>Insert Data</title>
+
+</head>
+<body>
+    <h1>Insert Data</h1>
+
+    <form method="post" action="<?php echo $block->getUrl('contacts/index/save');?> ">
+        <table> 
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td>
+         
+                <input type="text" name="name" placeholder="Enter Your Name" value="<?php 
+            if (isset($record)) {
+                echo $record->getdata('name');
+                
+            } else {
+                echo "";
+            }
+            ?>" required><br></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email"  name="email" placeholder="Example@gmail.com"  value="<?php
+               if (isset($record)) {
+                echo $record->getdata('email');
+            } else {
+                echo "";
+            }
+            
+            ?>" required><br></td>
+		</tr>
+        <tr>
+            <td><label for="detail">Comment:</label></td>
+            <td><input type="text"  name="comment" placeholder="Enter your comment "  value="<?php
+            
+            if (isset($record)) {
+                echo $record->getdata('comment');
+            } else {
+                echo "";    
+              
+            }
+          ?>" required><br></td>
+
+<input type="hidden"  name="editRecordId"   value="<?php
+            
+            if (isset($record)) {
+                echo $record->getdata('pfay_contacts_id');
+            } else {
+                echo "";    
+              
+            }
+          ?>" >
+		</tr>
+        <tr>
+            
+            <td colspan="2"><center><input type="submit" name="submit" value="Submit">&nbsp;<input type="reset" name="cancel" value="cancel"></center></td>
+		</tr>
+
+ 
+        </table>
+    </form>
+</body>
+</html>

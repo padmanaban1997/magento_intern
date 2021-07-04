@@ -1,0 +1,130 @@
+	.cont-form{
+		background-color: #EFF6FE;
+		padding: 32px 27px 29px 32px;
+		margin: 30px 22px 46px 16px;
+		border-radius: 10px;
+		.cont-form-title{
+			h5{
+				color: #231F20;
+				font-family: Poppins;
+				font-size: 22px;
+				font-weight: 500;
+				letter-spacing: 0.25px;
+				line-height: 20px;
+			}
+			p{
+				color: #333333;
+				 font-family: Poppins;
+				 font-size: 14px;
+				 font-weight: 400;
+				  letter-spacing: 0.25px;
+				  line-height: 20px;
+				  margin: 13px auto 21px auto;
+				 
+			}
+			.cont-form-info{
+				.form-group{
+					label{
+						  color: #333333;
+						  font-family: poppins;
+						  font-size: 14px;
+						  font-weight: 400;
+						  letter-spacing: 0.25px;
+						  line-height: 20.66px;
+						  text-align: center;
+						  i{
+						  	font-size: 7px;
+							padding-left: 8px;
+							color: #e02b27;
+							vertical-align: top;
+						  }
+					}
+					.form-control{
+						border: 1px solid #68CBDD;
+	  					background-color: #FFFFFF;
+	  					display: block;
+						width: 100%;
+						padding: 8.5px 10px;
+						font-size: 14px;
+						font-family: Poppins;
+						font-weight: 400;
+						line-height: 1.5;
+						color: #333333;
+						letter-spacing: 0.35px;
+						border-radius: 5px;
+						transition: none;
+						margin-left: 0px;
+						height: 40px;
+					}
+					textarea{
+						min-height: 102px;
+					}
+				}
+				select.form-control{
+					background: url('../images/arrow-down-sign.png') no-repeat right 10px center #ffffff;
+					-webkit-appearance: none;
+					appearance: none;
+					height: 40px;
+					font-family: poppins;
+					font-size: 13px;
+					color: #666666;
+					letter-spacing: 0.35px;
+				}
+				.text-center{
+					.cont-btn-submit{
+						border: none;
+						font-family: poppins;
+						font-size: 14px;
+						font-weight: 500;
+						color: #343434;
+						letter-spacing: 0.35px;
+						width: 100%;
+						padding: 9px 30px 10px 30px;
+						line-height: 21px;
+						background-color: #65CBDE;
+						box-shadow: -2px 4px 5px rgba(0,0,0,0.06);
+						border-radius: 5px;
+						margin: 14px 0px 0px 0px;
+						cursor: pointer;
+					}
+					.cont-btn{
+						max-width: 250px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1199px){
+		.cont-form .cont-form-title h5{
+			font-size: 20px;
+			padding: 0px 0px 12px 0px;
+		}
+		.cont-form .cont-form-title p{
+			font-size: 13px;
+			padding: 0px 0px 12px 0px;
+		}
+	}
+	@media screen and (max-width: 991px){
+		.cont-form{
+			padding: 32px 15px 29px 15px;
+			margin: 30px 0px 46px 0px;
+		}
+		.cont-form .cont-form-title h5{
+			font-size: 18px;
+		}
+	}
+	@media screen and (max-width:767px){
+		.cont-form .cont-form-title p{
+			font-size:12px;
+		}
+		.cont-form .cont-form-title .cont-form-info .form-group label{
+			font-size: 12px;
+		}
+		.cont-form .cont-form-title .cont-form-info .text-center .cont-btn-submit{
+			font-size: 12px;
+		}
+		.cont-form{
+			padding: 32px 30px 29px 30px;
+		}
+	}

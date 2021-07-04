@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Navigate_Contactus::core" title="Navigate" module="Navigate_Contactus" sortOrder="10" resource="Navigate_Contactus::contact"/>
+    	
+
+    	<add id="Navigate_Contactus::contactus" title="Contactus" module="Navigate_Partnership" sortOrder="10" resource="Navigate_Partnership::program" parent="Navigate_Contactus::core" />
+
+    	<add id="Navigate_Contactus::add_row" title="Manage Contact Us leads" module="Navigate_Contactus" sortOrder="20" parent="Navigate_Contactus::contactus" action="navigate_contactus/items" resource="Navigate_Contactus::add_row"/>
+    	 <add id="Navigate_Contactus::configuration" title="Configuration" module="Navigate_Contactus" sortOrder="21" parent="Navigate_Contactus::contactus" action="adminhtml/system_config/edit/section/navigate" resource="Navigate_Contactus::add_row"/>
+    </menu>
+</config>

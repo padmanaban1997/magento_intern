@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Navigate\Contactus\Api\Data\ContactInterface" type="Navigate\Contactus\Model\Contact" />
+
+    <virtualType name="Navigate\Contactus\Model\ResourceModel\Contact\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">navigate_contactus</argument>
+            <argument name="resourceModel" xsi:type="string">Navigate\Contactus\Model\ResourceModel\Contact</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="navigate_contact_list_data_source" xsi:type="string">Navigate\Contactus\Model\ResourceModel\Contact\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    
+
+</config>

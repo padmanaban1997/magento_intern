@@ -1,0 +1,63 @@
+<div class="cont-form">
+	<div class="cont-form-title">
+		<div class="cont-form-title">
+			<h5>Contact Us</h5>
+			<p>Just fill out the below form and our commerce navigator will contact you back within 1 business day.</p>
+			<form method="post" id ="contact-us" action="<?php echo $block->getBaseUrl().'contactus/index/save';?>" method="post" data-mage-init='{"validation": {}}'>
+			<div class="row">
+                <div class="col-md-12">
+                    <div class="cont-form-info">
+                        <div class="form-group">
+                            <label for="first-name">First Name<i class="fas fa-star-of-life"></i></label>
+                            <input data-validate="{required:true,'validate-alpha':true}" type="text" name="first_name" class="form-control" id="first-name" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name<i class="fas fa-star-of-life"></i></label>
+                            <input data-validate="{required:true,'validate-alpha':true}" type="text" name="last_name" class="form-control" id="last-name" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email<i class="fas fa-star-of-life"></i></label>
+                            <input data-validate="{required:true, 'validate-email':true}" type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+        			</div>
+                </div>
+                <div class="col-md-12">
+                    <div class="cont-form-info">
+                        <div class="form-group">
+                            <label for="phone-number">Phone number<i class="fas fa-star-of-life"></i></label>
+                            <input data-validate="{required:true, 'validate-number':true}" type="number" name="telephone"  class="form-control" id="phone-number" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company<i class="fas fa-star-of-life"></i></label>
+                            <input data-validate="{required:true,'validate-alpha':true}" type="text" name="company" class="form-control" id="company" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Website</label>
+                            <input  type="text" name="website_name" class="form-control" id="website_name" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="cont-form-info">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="cont-btn-submit">Submit</button>
+                        </div>
+                    </div>
+                </div>  
+             </div>               
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+require([ 'jquery', 'mage/mage' ], function ($) {
+var dataForm = jQuery('#contact-us');
+    dataForm.mage('validation', {});
+});
+</script>			
+
